@@ -1,6 +1,6 @@
 ﻿namespace COMP123_Assignment5_300931522
 {
-    partial class Form1
+    partial class BMICalculator
     {
         /// <summary>
         /// Required designer variable.
