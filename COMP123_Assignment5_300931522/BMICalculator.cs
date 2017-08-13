@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Student ID: 300931522
  * Date: August 13, 2017
  * Description: This is a form that calculates a person's BMI (Body Mass Index)
- * Version 1.2: Added methods to calculate BMI based on unit selected and to show output BMI and Scale
+ * Version 1.3: Added Reset method
  */
  
 namespace COMP123_Assignment5_300931522
@@ -75,10 +75,6 @@ namespace COMP123_Assignment5_300931522
             InitializeComponent();
         }
 
-
-
-
-
         // PRIVATE METHODS
         /// <summary>
         /// This private method determines the output in which units (calculation switches) of the BMI calculate
@@ -134,9 +130,18 @@ namespace COMP123_Assignment5_300931522
             PoundOrKGBMILabel.Text = "Kilograms";
         }
 
+
+        /// <summary>
+        /// This method resets the form back to default values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ResetBMIButton_Click(object sender, EventArgs e)
         {
-
+            HeightBMITextBox.Text = "0";
+            WeightBMITextBox.Text = "0";
+            OutputBMITextBox.Text = "";
+            ScaleBMITextBox.Text = "";
         }
     }
 }
