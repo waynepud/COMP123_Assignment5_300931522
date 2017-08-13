@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Student ID: 300931522
  * Date: August 13, 2017
  * Description: This is a form that calculates a person's BMI (Body Mass Index)
- * Version 1.1: Added variables result, imperial and metric with properties and methods to determine which unit is used
+ * Version 1.2: Added methods to calculate BMI based on unit selected and to show output BMI and Scale
  */
  
 namespace COMP123_Assignment5_300931522
@@ -24,7 +24,6 @@ namespace COMP123_Assignment5_300931522
         private double _result;
         private bool _imperial;
         private bool _metric;
-
 
 
         // PUBLIC PROPERTIES
@@ -82,7 +81,7 @@ namespace COMP123_Assignment5_300931522
 
         // PRIVATE METHODS
         /// <summary>
-        /// This private method determines the output of the BMI calculate
+        /// This private method determines the output in which units (calculation switches) of the BMI calculate
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -95,13 +94,26 @@ namespace COMP123_Assignment5_300931522
             }
             else
             {
-                OutputBMITextBox.Text = "Not working";
+                Result = (Convert.ToDouble(WeightBMITextBox.Text)) / (Convert.ToDouble(HeightBMITextBox.Text) * Convert.ToDouble(HeightBMITextBox.Text));
+                OutputBMITextBox.Text = Convert.ToString(Result);
             }
 
-            //if (this.Metric)
-            //{
-
-            //}
+            if (Result < 18.5)
+            {
+                ScaleBMITextBox.Text = "Your BMI is considered underweight.";
+            }
+            if (Result >= 18.5 && Result <= 24.9)
+            {
+                ScaleBMITextBox.Text = "Your BMI is considered normal.";
+            }
+            if (Result >= 25 && Result <= 29.9)
+            {
+                ScaleBMITextBox.Text = "Your BMI is considered overweight.";
+            }
+            if (Result >= 30)
+            {
+                ScaleBMITextBox.Text = "Your BMI is considered obese.";
+            }
         }
 
 
@@ -120,6 +132,11 @@ namespace COMP123_Assignment5_300931522
         {
             InchOrMeterBMILabel.Text = "Meters";
             PoundOrKGBMILabel.Text = "Kilograms";
+        }
+
+        private void ResetBMIButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

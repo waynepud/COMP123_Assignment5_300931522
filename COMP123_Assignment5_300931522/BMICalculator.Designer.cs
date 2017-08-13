@@ -133,6 +133,7 @@
             this.HeightBMITextBox.Name = "HeightBMITextBox";
             this.HeightBMITextBox.Size = new System.Drawing.Size(293, 38);
             this.HeightBMITextBox.TabIndex = 4;
+            this.HeightBMITextBox.Text = "0";
             this.HeightBMITextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // WeightBMITextBox
@@ -143,6 +144,7 @@
             this.WeightBMITextBox.Name = "WeightBMITextBox";
             this.WeightBMITextBox.Size = new System.Drawing.Size(293, 38);
             this.WeightBMITextBox.TabIndex = 5;
+            this.WeightBMITextBox.Text = "0";
             this.WeightBMITextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // WeightBMILabel
@@ -192,6 +194,7 @@
             this.ResetBMIButton.TabIndex = 10;
             this.ResetBMIButton.Text = "Reset";
             this.ResetBMIButton.UseVisualStyleBackColor = false;
+            this.ResetBMIButton.Click += new System.EventHandler(this.ResetBMIButton_Click);
             // 
             // ScaleBMITextBox
             // 
