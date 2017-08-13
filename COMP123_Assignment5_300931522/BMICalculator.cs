@@ -148,6 +148,11 @@ namespace COMP123_Assignment5_300931522
         /// <summary>
         /// These two keypress methods restrict input to only be numerical values with 1 decimal point allowed
         /// Note: This code was referenced from https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
+        /// to understand the approach towards how to restrict inputs as in keypress to numerical values only
+        /// The idea behind it is to match the conditions of the key being only digit and decimal and not other inputs then the event (e) becomes true
+        /// which allows the input to be processed
+        /// The second if condition represents if the char is a decimal and the text within the textbox counts no decimal char already (noted by >-1) 
+        /// then the event (e) is considered true and the decimal is shown, otherwise the decimal will not show
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
