@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Student ID: 300931522
  * Date: August 13, 2017
  * Description: This is a form that calculates a person's BMI (Body Mass Index)
- * Version 1.3: Added Reset method
+ * Version 1.4: Added Numerical input keypress restriction methods
  */
  
 namespace COMP123_Assignment5_300931522
@@ -142,6 +142,39 @@ namespace COMP123_Assignment5_300931522
             WeightBMITextBox.Text = "0";
             OutputBMITextBox.Text = "";
             ScaleBMITextBox.Text = "";
+        }
+
+
+        /// <summary>
+        /// These two keypress methods restrict input to only be numerical values with 1 decimal point allowed
+        /// Note: This code was referenced from https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HeightBMITextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void WeightBMITextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

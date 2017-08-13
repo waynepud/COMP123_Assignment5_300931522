@@ -135,6 +135,7 @@
             this.HeightBMITextBox.TabIndex = 4;
             this.HeightBMITextBox.Text = "0";
             this.HeightBMITextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.HeightBMITextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HeightBMITextBox_KeyPress);
             // 
             // WeightBMITextBox
             // 
@@ -146,6 +147,7 @@
             this.WeightBMITextBox.TabIndex = 5;
             this.WeightBMITextBox.Text = "0";
             this.WeightBMITextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.WeightBMITextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WeightBMITextBox_KeyPress);
             // 
             // WeightBMILabel
             // 
@@ -175,8 +177,11 @@
             // 
             // OutputBMITextBox
             // 
+            this.OutputBMITextBox.BackColor = System.Drawing.Color.MistyRose;
             this.UITableLayoutPanel.SetColumnSpan(this.OutputBMITextBox, 2);
+            this.OutputBMITextBox.Enabled = false;
             this.OutputBMITextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputBMITextBox.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.OutputBMITextBox.Location = new System.Drawing.Point(3, 323);
             this.OutputBMITextBox.Name = "OutputBMITextBox";
             this.OutputBMITextBox.ReadOnly = true;
